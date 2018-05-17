@@ -29,3 +29,16 @@ angular.module('minhasDiretivas', []).directive('meuPainel', () => {
 
     return ddo;
 })
+.directive('meuBotaoPerigo', () => {
+    var ddo = {};
+    ddo.restrict = "E";
+
+    ddo.scope = {
+        nome: '@',
+        acao: '&' //usar para passar uma expressão
+    }
+    
+    ddo.template = '<button ng-click="acao(foto)" class="btn btn-danger btn-block">{{nome}}</button>'
+
+    return ddo;
+})
